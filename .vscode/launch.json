@@ -14,6 +14,7 @@
             "restart": false,
             "sourceMaps": false,
             "localRoot": "${workspaceFolder}/simple-nodejs-server/src",
+            //"remoteRoot": "${workspaceFolder}/simple-nodejs-server/src",
             "remoteRoot": "/home/simple-nodejs-server/src",
             "protocol": "inspector"
         }

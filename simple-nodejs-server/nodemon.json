@@ -1,0 +1,13 @@
+{
+    "restartable": "rs",
+    "verbose": true,
+    "delay": "500ms",
+    "watch": [
+      "src/",
+      "node_modules/"
+    ],
+    "ext": "js",
+    "args": [
+      "--inspect=9229"
+    ]
+  }

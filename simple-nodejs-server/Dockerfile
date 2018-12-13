@@ -19,5 +19,5 @@ RUN npm install
 
 #EXPOSE 4300
 EXPOSE 4300 9229
-#CMD [ "npm", "run", "debug" ]
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "debug" ]
+#CMD [ "npm", "start" ]

@@ -5,11 +5,12 @@ const express = require('express');
 // Constants
 const PORT = 4300;
 const HOST = '0.0.0.0';
+//const HOST = 'localhost';
 
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello world\n');
+  res.send('Hello world, 2\n');
 });
 
 app.get('/id', (req, res) => {

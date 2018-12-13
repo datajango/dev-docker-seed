@@ -2,16 +2,15 @@
   "name": "simple-nodejs-server",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "./src/server.js",
   "dependencies": {
     "express": "^4.16.4"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --inspect-brk=0.0.0.0 src/server.js",
-    "debug": "nodemon server.js",
-    "debug1": "NODE_ENV=test nodemon —-inspect=0.0.0.0:9229 server.js"
+    "start": "node --inspect-brk=0.0.0.0 server.js",
+    "debug": "nodemon"
   },
   "author": "Anthony Leotta",
   "license": "MIT"

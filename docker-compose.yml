@@ -28,7 +28,7 @@ services:
     #working_dir: /home/simple-nodejs-server
     #restart: always
     volumes:
-      - ./simple-nodejs-server:/home/simple-nodejs-server
+      - ./simple-nodejs-server/src:/home/simple-nodejs-server/src
     #command: ["node", "main"]
 
   # project:

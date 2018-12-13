@@ -25,6 +25,7 @@ My "must have" features are:
 * Browser based Mongo Database Manager - I install NOTHING.
 * SSL https for testing
 * Domain Name aliasing for testing
+* Unit tests
 
 I tried Vagrant and Virtual Box but quickly rejected it because it forced me to rebuild my images from scratch every time.  I adopted Docker and Docker Compose as a way to quickly build up a fully containerized developmnet environment.  Once I started down the Docker path, setting up a fully featured development envrionment became so easy that I was able include features I hold only dreamed about.
 
@@ -52,7 +53,24 @@ The following describes the a node.js server project written in JavaScript.
 
 ### Nodemon 
 
---- add nodemon notes here
+12/13/2018 - I had to add a nodemon.json configuration in order to get nodemon working. It was then that I also realized that the node_modules folder can be either in the image or shared using a volume.  This is somewhat surprising to me because it changes the way I think about npm install and containers in general.  Running 'npm install' in a Dockerfile against a volume, in effect is the same as running 'npm install' on the local machine.  What I did was change my volume to point to the 'src' folder under simple-nodejs-server.
+
+nodemon.json:
+```
+{
+    "restartable": "rs",
+    "verbose": true,
+    "delay": "500ms",
+    "watch": [
+      "src/",
+      "node_modules/"
+    ],
+    "ext": "js",
+    "args": [
+      "--inspect=9229"
+    ]
+  }
+```
 
 ### Step debugging in MS Code Studio
 
@@ -78,6 +96,12 @@ In MS Code Studio, add a debug configuration:
   "remoteRoot": "/",
   "protocol": "inspector"
 }
+```
+
+## Terminal for simple-nodejs-server
+
+```
+docker-compose exec simple-nodejs-server bash
 ```
 
 ## Testing
