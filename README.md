@@ -4,7 +4,7 @@
 
 by Anthony Leotta (the datajango)
 
-This demo keeps growing, it started as a simple idea: "How can you create Node.Js back-ends using Typescript?"  The answer is: NestJS.   Along the way, I realized that the preferred way to develop back-ends is to do it locally on whatever your OS of choice is.  I running at the time of this writting a mess of OSes including : MacOS Mojava 10.14.2, Windows 10 Pro, Linux Ubuntu 16.04, 17.10 and 18.04. I need a way to develop equally as well on all my platforms.
+This demo keeps growing, it started as a simple idea: "How can you create Node.Js back-ends using Typescript?"  The answer is: NestJS.   Along the way, I realized that the preferred way to develop back-ends is to do it locally on whatever your OS of choice is.  I running at the time of this writing a mess of OSes including : MacOS Mojava 10.14.2, Windows 10 Pro, Linux Ubuntu 16.04, 17.10 and 18.04. I need a way to develop equally as well on all my platforms.
 
 My "must have" features are:
 
@@ -15,7 +15,7 @@ My "must have" features are:
 * Emmet -- bow thy head to the awesome power of Emmet ---
 * Linting
 * Code completion
-* Preffered IDE is Visual Code Studio
+* Preferred IDE is Visual Code Studio
 * Choice of using any database on this list: MySQL / MariaDB / Postgres / SQLite / Microsoft SQL Server / Oracle, mongodb
 * Choice of using redis
 * Support ES6, ES7, ES8
@@ -27,9 +27,9 @@ My "must have" features are:
 * Domain Name aliasing for testing
 * Unit tests
 
-I tried Vagrant and Virtual Box but quickly rejected it because it forced me to rebuild my images from scratch every time.  I adopted Docker and Docker Compose as a way to quickly build up a fully containerized developmnet environment.  Once I started down the Docker path, setting up a fully featured development envrionment became so easy that I was able include features I hold only dreamed about.
+I tried Vagrant and Virtual Box but quickly rejected it because it forced me to rebuild my images from scratch every time.  I adopted Docker and Docker Compose as a way to quickly build up a fully containerized development environment.  Once I started down the Docker path, setting up a fully featured development environment became so easy that I was able include features I hold only dreamed about.
 
-Make no mistake: Docker is the greatest thing to ever haoppen to software development.
+Make no mistake: Docker is the greatest thing to ever happen to software development.
 
 ## Running
 
@@ -78,7 +78,7 @@ Start node with debugging turned on
 
 * --inspect tells Node that we want to run our app in debug mode.
 * by adding -brk we also make sure that the app stops at the first line, so we have enough time to open up the inspector
-* nadding =0.0.0.0 opens up the debugger to connections from any IP.
+* adding =0.0.0.0 opens up the debugger to connections from any IP.
 
 ```
 node --inspect-brk=0.0.0.0
@@ -108,7 +108,7 @@ docker-compose exec simple-nodejs-server bash
 
 ### Phase 1
 
-To see that all the various components are running, execute curl at the command line. If all the server respond, moveteh next next phase.
+To see that all the various components are running, execute curl at the command line. If all the server respond, move the next next phase.
 
 Main HTML/PHP Website
 ```
