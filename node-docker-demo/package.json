@@ -14,6 +14,14 @@
     "pg": "^6.4.2",
     "pg-hstore": "^2.3.2",
     "sequelize": "~4.28.6",
-    "serve-favicon": "~2.4.5"
+    "serve-favicon": "~2.4.5",
+    "lodash": ">=4.17.5",
+    "deep-extend": ">=0.5.1",
+    "randomatic": ">=3.0.0"
+  },
+  "devDependencies": {
+    "lodash": ">=4.17.5",
+    "deep-extend": ">=0.5.1",
+    "randomatic": ">=3.0.0"
   }
 }
