@@ -1,6 +1,6 @@
-# nest-demo
+# dev-docker-seed
 
-[nest-demo](https://github.com/datajango/nest-demo)
+[dev-docker-seed](https://github.com/datajango/dev-docker-seed)
 
 by Anthony Leotta (the datajango)
 
