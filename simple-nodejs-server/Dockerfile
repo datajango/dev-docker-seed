@@ -17,6 +17,7 @@ RUN npm install
 
 #COPY ./src ./src
 
-EXPOSE 4300
-
-#CMD [ "npm", "start" ]
+#EXPOSE 4300
+EXPOSE 4300 9229
+#CMD [ "npm", "run", "debug" ]
+CMD [ "npm", "start" ]

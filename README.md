@@ -30,15 +30,12 @@ I tried Vagrant and Virtual Box but quickly rejected it because it forced me to 
 
 Make no mistake: Docker is the greatest thing to ever haoppen to software development.
 
-
-
 ## Running
 
 ```
 docker-compose build
 docker-compose up -d
 ```
-
 
 |    Name   | Command|State|Ports|
 |-----------|--------|-----|-----|
@@ -49,7 +46,39 @@ docker-compose up -d
 |simple-c   |npm start                     |   Up  |    0.0.0.0:4300->4300/tcp|
 |web-c      |nginx -g daemon off;          |   Up  |    0.0.0.0:80->80/tcp|
 
+## Standard JavaScript Node.js 
 
+The following describes the a node.js server project written in JavaScript.
+
+### Nodemon 
+
+--- add nodemon notes here
+
+### Step debugging in MS Code Studio
+
+Start node with debugging turned on
+
+* --inspect tells Node that we want to run our app in debug mode.
+* by adding -brk we also make sure that the app stops at the first line, so we have enough time to open up the inspector
+* nadding =0.0.0.0 opens up the debugger to connections from any IP.
+
+```
+node --inspect-brk=0.0.0.0
+```
+
+In MS Code Studio, add a debug configuration:
+```
+{
+  "name": "Docker: Attach to Node",
+  "type": "node",
+  "request": "attach",
+  "port": 9229,
+  "address": "localhost",
+  "localRoot": "${workspaceFolder}",
+  "remoteRoot": "/",
+  "protocol": "inspector"
+}
+```
 
 ## Testing
 
@@ -174,7 +203,7 @@ docker rmi -f $(docker images -q)
 docker volume rm $(docker volume ls -q)
 ```
 
-* All cxommands together to make easier cut-n-paste
+* All commands together to make easier cut-n-paste
 ```
 docker stop $(docker ps -a -q)
 docker rm -f $(docker ps -a -q)

@@ -18,9 +18,10 @@ services:
   simple-nodejs-server:
     container_name: simple-c
     build: ./simple-nodejs-server
-    command: nodemon --watch src src/server.js
+    #command: nodemon --watch src src/server.js
     ports:
       - "4300:4300"
+      - "9229:9229"
       #- "443:443"
     #environment:
     #  NODE_ENV: production

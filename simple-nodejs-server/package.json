@@ -9,8 +9,10 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server.js"
+    "start": "node --inspect-brk=0.0.0.0 src/server.js",    
+    "debug": "nodemon server.js",
+    "debug1": "NODE_ENV=test nodemon —-inspect=0.0.0.0:9229 server.js"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Anthony Leotta",
+  "license": "MIT"
 }
