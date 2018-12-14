@@ -8,12 +8,10 @@ services:
       - "80:80"
       #- "443:443"
     volumes:
-      - ./www:/var/www
-      - ./project/dist:/home/app
+      - ./www:/var/www      
     links:
       - php
-      - simple-server
-      #- project
+      - simple-server      
 
   simple-server:
     container_name: simple-c
@@ -26,22 +24,10 @@ services:
     #environment:
     #  NODE_ENV: production
     #working_dir: /home/simple-server
-    #restart: always
+    restart: always
     volumes:
       - ./simple-server/src:/home/simple-server/src
-    #command: ["node", "main"]
-
-  # project:
-  #   image: node:alpine
-  #   environment:
-  #     NODE_ENV: production
-  #   working_dir: /home/app
-  #   restart: always
-  #   volumes:
-  #     - ./project/dist:/home/app
-  #   depends_on:
-  #     - php
-  #   command: ["node", "main"]
+    
 
   php:
     container_name: php-c
