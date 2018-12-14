@@ -21,5 +21,13 @@ app.get('/name/:name', (req, res) => {
   res.json({name: req.params.name});
 });
 
+app.get('/names', (req, res) => {
+  res.json({names: [
+    { name: "tony" },
+    { name: "stacy" },
+    { name: "allison" }
+  ]});
+});
+
 app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);

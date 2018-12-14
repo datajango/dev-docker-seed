@@ -145,11 +145,11 @@ docker exec -i mysql-c mysql -uroot -pmysql  <<< "select version();"
 * dump the mysql database without having to use a password
   * gzipped
 ```
-docker-compose exec db mysqldump nestdemo | gzip > db/backups/nestdemo.sql.gz
+docker-compose exec db mysqldump nestdemo | gzip > backups/nestdemo.sql.gz
 ```
   * plain
 ```
-docker-compose exec db mysqldump nestdemo | cat > db/backups/nestdemo.sql
+docker-compose exec db mysqldump nestdemo | cat > backups/nestdemo.sql
 ```
 
 
