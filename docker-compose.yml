@@ -1,34 +1,27 @@
 version: '3.1'
 
 services:
-  web:
-    container_name: web-c
-    build: ./web
+  nginx:
+    container_name: nginx
+    build: ./nginx
     ports:
       - "80:80"
-      #- "443:443"
     volumes:
       - ./www:/var/www      
     links:
       - php
-      - simple-server      
+      - nodejs      
 
-  simple-server:
-    container_name: simple-c
-    build: ./simple-server
-    #command: nodemon --watch src src/server.js
+  nodejs:
+    container_name: nodejs
+    build: ./nodejs
     ports:
       - "4300:4300"
       - "9229:9229"
-      #- "443:443"
-    #environment:
-    #  NODE_ENV: production
-    #working_dir: /home/simple-server
     restart: always
     volumes:
-      - ./simple-server/src:/home/simple-server/src
+      - ./nodejs/src:/home/nodejs/src
     
-
   php:
     container_name: php-c
     build:
@@ -36,7 +29,7 @@ services:
     volumes:
       - ./www:/var/www
     links:
-      - db
+      - mysql
 
   maildev:
     container_name: mail-c
@@ -45,33 +38,31 @@ services:
     ports:
       - 1080:80
 
-  db:
-    container_name: mysql-c
-    image: mysql:5.7
-    #build:
-    #  context: ./db
+  mysql:
+    container_name: mysql
+    build:
+      context: ./mysql
     ports:
       - "3336:3306"
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: mysql
-      MYSQL_DATABASE: nestdemo
-      MYSQL_USER: nestdemo
-      MYSQL_PASSWORD: nestdemo
+      MYSQL_DATABASE: demo
+      MYSQL_USER: demo
+      MYSQL_PASSWORD: demo
     volumes:
-      - db_data:/var/lib/mysql
+      - mysql_data:/var/lib/mysql
       - ./logs:/var/log/mysql
-      - ./db/conf.d:/etc/mysql/conf.d
+      - ./mysql/conf.d:/etc/mysql/conf.d
 
   adminer:
-    container_name: adminer-c
+    container_name: adminer
     image: adminer
     restart: always
     ports:
       - 8080:8080
     links:
-      - db
+      - mysql
 
 volumes:
-  db_data:
-    
+  mysql_data:

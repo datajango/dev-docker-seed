@@ -79,7 +79,7 @@ The following describes the a node.js server project written in JavaScript.
 
 ### Nodemon 
 
-12/13/2018 - I had to add a nodemon.json configuration in order to get nodemon working. It was then that I also realized that the node_modules folder can be either in the image or shared using a volume.  This is somewhat surprising to me because it changes the way I think about npm install and containers in general.  Running 'npm install' in a Dockerfile against a volume, in effect is the same as running 'npm install' on the local machine.  What I did was change my volume to point to the 'src' folder under simple-server.
+12/13/2018 - I had to add a nodemon.json configuration in order to get nodemon working. It was then that I also realized that the node_modules folder can be either in the image or shared using a volume.  This is somewhat surprising to me because it changes the way I think about npm install and containers in general.  Running 'npm install' in a Dockerfile against a volume, in effect is the same as running 'npm install' on the local machine.  What I did was change my volume to point to the 'src' folder under nodejs.
 
 nodemon.json:
 ```
@@ -124,10 +124,10 @@ In MS Code Studio, add a debug configuration:
 }
 ```
 
-## Terminal for simple-server
+## Terminal for nodejs
 
 ```
-docker-compose exec simple-server bash
+docker-compose exec nodejs bash
 ```
 
 ## Testing
@@ -160,22 +160,22 @@ curl -i localhost:4300
 
 * Test mysql at the command line
 ```
-docker-compose exec db /bin/bash
+docker-compose exec mysql /bin/bash
 ```
 
 * This command will run the mysql client and return the version of the currently running server.
 ```
-docker exec -i mysql-c mysql -uroot -pmysql  <<< "select version();"
+docker exec -i mysql mysql -uroot -pmysql  <<< "select version();"
 ```
 
 * dump the mysql database without having to use a password
   * gzipped
 ```
-docker-compose exec db mysqldump nestdemo | gzip > backups/nestdemo.sql.gz
+docker-compose exec mysql mysqldump demo | gzip > backups/demo.sql.gz
 ```
   * plain
 ```
-docker-compose exec db mysqldump nestdemo | cat > backups/nestdemo.sql
+docker-compose exec mysql mysqldump demo | cat > backups/demo.sql
 ```
 
 
@@ -205,7 +205,7 @@ Let’s add just two more options to that base configuration tsconfig.json:
 ```
 ## Docker
 
-The dockedr-compose environment includes :
+The docker-compose environment includes :
 
 * mysql
   * [mysql](https://docs.docker.com/samples/library/mysql/#-via-docker-stack-deploy-or-docker-compose)
@@ -259,4 +259,27 @@ docker stop $(docker ps -a -q)
 docker rm -f $(docker ps -a -q)
 docker rmi -f $(docker images -q)
 docker volume rm $(docker volume ls -q)
+```
+
+## Docker Status
+
+* list containers, also can be shown with docker ps
+```
+docker container ls
+```
+* list images, there is also the command docker images
+```
+docker image ls
+```
+* list volumes
+```
+docker volume ls
+```
+* lists networks
+```
+docker network ls
+```
+*  lists the number of containers and image, as well as system wide information regarding the Docker installation
+```
+docker info
 ```

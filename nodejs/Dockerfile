@@ -4,7 +4,7 @@ FROM node:carbon
 RUN npm install -f -g nodemon
 
 # Create app directory
-WORKDIR /home/simple-server
+WORKDIR /home/nodejs
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
