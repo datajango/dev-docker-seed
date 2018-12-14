@@ -1,5 +1,31 @@
 # dev-docker-seed
 
+## For the impatient
+
+* This project requires that you have Docker installed.
+
+* To build the services
+
+```
+docker-compose build
+```
+
+* To run all the services
+```
+docker-compose up -d
+```
+
+* To stop
+```
+docker-compose stop
+or
+docker-compose down 
+```
+* stop will stop services
+* down will stop and remove containers, networks, images, and volumes
+
+
+## About
 [dev-docker-seed](https://github.com/datajango/dev-docker-seed)
 
 by Anthony Leotta (the datajango)
@@ -53,7 +79,7 @@ The following describes the a node.js server project written in JavaScript.
 
 ### Nodemon 
 
-12/13/2018 - I had to add a nodemon.json configuration in order to get nodemon working. It was then that I also realized that the node_modules folder can be either in the image or shared using a volume.  This is somewhat surprising to me because it changes the way I think about npm install and containers in general.  Running 'npm install' in a Dockerfile against a volume, in effect is the same as running 'npm install' on the local machine.  What I did was change my volume to point to the 'src' folder under simple-nodejs-server.
+12/13/2018 - I had to add a nodemon.json configuration in order to get nodemon working. It was then that I also realized that the node_modules folder can be either in the image or shared using a volume.  This is somewhat surprising to me because it changes the way I think about npm install and containers in general.  Running 'npm install' in a Dockerfile against a volume, in effect is the same as running 'npm install' on the local machine.  What I did was change my volume to point to the 'src' folder under simple-server.
 
 nodemon.json:
 ```
@@ -98,10 +124,10 @@ In MS Code Studio, add a debug configuration:
 }
 ```
 
-## Terminal for simple-nodejs-server
+## Terminal for simple-server
 
 ```
-docker-compose exec simple-nodejs-server bash
+docker-compose exec simple-server bash
 ```
 
 ## Testing
