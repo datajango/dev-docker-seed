@@ -110,15 +110,8 @@ Make no mistake: Docker is the greatest thing to ever happen to software develop
 docker-compose build
 docker-compose up -d
 ```
+![redis-commander](./docs/docker-compose-ps.png)
 
-|    Name   | Command|State|Ports|
-|-----------|--------|-----|-----|
-|adminer-c  |entrypoint.sh docker-php-e ...|   Up  |    0.0.0.0:8080->8080/tcp|
-|maildev    |bin/maildev --web 80 --smtp 25|   Up  |    25/tcp, 0.0.0.0:1080->80/tcp|
-|mysql-c    |docker-entrypoint.sh mysqld   |   Up  |    0.0.0.0:3336->3306/tcp, 33060/tcp|
-|php-c      |docker-php-entrypoint php-fpm |   Up  |    9000/tcp|
-|simple-c   |npm start                     |   Up  |    0.0.0.0:4300->4300/tcp|
-|web-c      |nginx -g daemon off;          |   Up  |    0.0.0.0:80->80/tcp|
 
 ## Standard JavaScript Node.js 
 
@@ -225,7 +218,6 @@ docker-compose exec mysql mysqldump demo | gzip > backups/demo.sql.gz
 docker-compose exec mysql mysqldump demo | cat > backups/demo.sql
 ```
 
-
 ## Steps to Create this ProjectSetup
 
 Dependencies
@@ -272,23 +264,7 @@ The docker-compose environment includes :
 * nginx
 * php-fpm
 
-## Resources
-
-* [An Exhaustive Guide to Writing Dockerfiles for Node.js Web Apps](https://blog.hasura.io/an-exhaustive-guide-to-writing-dockerfiles-for-node-js-web-apps-bbee6bd2f3c4)
-* [Dockerizing a Node.js web app](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/)
-* [npm-package.json](https://docs.npmjs.com/files/package.json)
-* [Docker Tips : Development With Nodemon](https://medium.com/lucjuggery/docker-in-development-with-nodemon-d500366e74df)
-* [Setup Node.js, Apache and an nginx reverse-proxy with Docker](https://medium.com/@francoisromain/setup-node-js-apache-nginx-reverse-proxy-with-docker-1f5a5cb3e71e)
-* [Building Your First Node App Using Docker
-](https://www.javascriptjanuary.com/blog/building-your-first-node-app-using-docker)
-* [Nest framework TypeScript starter](https://github.com/nestjs/typescript-starter)
-* [NestJS Docs](https://docs.nestjs.com/)
-* [nodemon utility](https://nodemon.io/)
-* [Docker](https://docs.docker.com/)
-* [Docker Compose](https://docs.docker.com/compose/compose-file/)
-* [MySQL in Development](https://serversforhackers.com/c/mysql-in-dev-docker)
-
-## To Cleanup
+### Cleanup
 
 * Stop all containers
 ```
@@ -315,7 +291,7 @@ docker rmi -f $(docker images -q)
 docker volume rm $(docker volume ls -q)
 ```
 
-## Docker Status
+### Docker Status
 
 * list containers, also can be shown with docker ps
 ```
@@ -373,3 +349,68 @@ docker-compose exec mongo-express bash
 
 ## Planned Features
 
+All these features will be add in the the next couple weeks.
+
+* add Unit testing
+* add CI/CD examples
+  * Heroku
+  * Linode
+  * Digital Ocean
+  * AWS
+* global Production, Development, QA Environments
+  * disabke debugger for production and QA Environmenfs
+* Environment variable passing
+* mysql demo
+  * add create schema in docker container build phase
+  * add support for migrations
+* add nestjs demo
+* nodejs server demo
+  * add mysql example
+  * add mongodb example
+  * add redis example
+  * add oauth2
+  * add send email example
+  * add bootstrap version
+  * add material version  
+  * add graphQL
+  * add an ORM
+  * add migrations
+* php server demo
+  * add mysql example
+  * add mongodb example
+  * add redis example
+  * add oauth2
+  * add send email example
+  * add bootstrap version
+  * add material version 
+  * add composer to docker image 
+  * add an ORM
+  * add migrations
+* html5 demo
+  * add bootstrap version
+  * add material version
+* nodejs microservices demo
+  * add apis to nginx first
+  * [Building Microservices: Using an API Gateway](https://www.nginx.com/blog/building-microservices-using-an-api-gateway/)
+* react client demo
+* angular client demo
+* vuejs client demo
+* oauth2 client demo
+* add postgreSQL demo
+
+
+## Resources
+
+* [An Exhaustive Guide to Writing Dockerfiles for Node.js Web Apps](https://blog.hasura.io/an-exhaustive-guide-to-writing-dockerfiles-for-node-js-web-apps-bbee6bd2f3c4)
+* [Dockerizing a Node.js web app](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/)
+* [npm-package.json](https://docs.npmjs.com/files/package.json)
+* [Docker Tips : Development With Nodemon](https://medium.com/lucjuggery/docker-in-development-with-nodemon-d500366e74df)
+* [Setup Node.js, Apache and an nginx reverse-proxy with Docker](https://medium.com/@francoisromain/setup-node-js-apache-nginx-reverse-proxy-with-docker-1f5a5cb3e71e)
+* [Building Your First Node App Using Docker
+](https://www.javascriptjanuary.com/blog/building-your-first-node-app-using-docker)
+* [Nest framework TypeScript starter](https://github.com/nestjs/typescript-starter)
+* [NestJS Docs](https://docs.nestjs.com/)
+* [nodemon utility](https://nodemon.io/)
+* [Docker](https://docs.docker.com/)
+* [Docker Compose](https://docs.docker.com/compose/compose-file/)
+* [MySQL in Development](https://serversforhackers.com/c/mysql-in-dev-docker)
