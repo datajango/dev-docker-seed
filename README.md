@@ -1,5 +1,51 @@
 # dev-docker-seed
 
+## A fully cogit statntainerized development seed project
+
+* nginx 
+  * serves plain HTML
+  * serves PHP
+  * reverse to Proxy to a node.js server
+* sample node.js server written in JavaScript
+  * live code reloading with nodemon
+  * interactive step debugging with MS Code Studio
+  * edit cide using a shared volume
+* sample PHP website
+  * interactive step debugging with MS Code Studio
+  * edit cide using a shared volume
+* redis
+  * persistant data due to a volume
+* mysql
+  * persistant data due to a volume
+  * SQL Query log saves on host due to a volume
+  * Database bakups to host due to a volume
+* mongodb
+  * persistant data due to a volume
+* redis manager
+  * using redis commander
+* mysql database manager
+  * using adminer
+  * Support for
+    * MySQL
+    * SQLite 3
+    * SQLite 2
+    * PostgresSQL
+    * Oracle
+    * MS SQL
+    * Firebird
+    * SimpleDB
+    * MongoDB
+    * ElacticSearch
+    * ClickHouse
+* mongodb database manager      
+  * using mongo-exopress
+* Mail Client
+  * test email notifications
+  * send and recieve emails
+  * map to a domain for testing
+* Mail Server
+  * maildev
+
 ## For the impatient
 
 * This project requires that you have Docker installed.
@@ -23,6 +69,9 @@ docker-compose down
 ```
 * stop will stop services
 * down will stop and remove containers, networks, images, and volumes
+
+
+
 
 
 ## About
@@ -282,4 +331,37 @@ docker network ls
 *  lists the number of containers and image, as well as system wide information regarding the Docker installation
 ```
 docker info
+```
+
+
+## MongoDB
+
+* run bash 
+```
+docker-compose exec mongodb bash
+
+mongod --version
+
+db version v4.0.3
+git version: 7ea530946fa7880364d88c8d8b6026bbc9ffa48c
+OpenSSL version: OpenSSL 1.1.0j  20 Nov 2018
+allocator: tcmalloc
+modules: none
+build environment:
+    distmod: debian92
+    distarch: x86_64
+    target_arch: x86_64
+
+mongo
+  show dbs    
+```
+
+## Mongo-Express Admin Interface
+
+Web-based MongoDB admin interface, written with Node.js and express
+
+* [mongo-express](https://docs.docker.com/samples/library/mongo-express/)
+
+```
+docker-compose exec mongo-express bash
 ```
