@@ -71,9 +71,6 @@ docker-compose down
 * down will stop and remove containers, networks, images, and volumes
 
 
-
-
-
 ## About
 [dev-docker-seed](https://github.com/datajango/dev-docker-seed)
 
@@ -105,6 +102,7 @@ My "must have" features are:
 I tried Vagrant and Virtual Box but quickly rejected it because it forced me to rebuild my images from scratch every time.  I adopted Docker and Docker Compose as a way to quickly build up a fully containerized development environment.  Once I started down the Docker path, setting up a fully featured development environment became so easy that I was able include features I hold only dreamed about.
 
 Make no mistake: Docker is the greatest thing to ever happen to software development.
+
 
 ## Running
 
@@ -372,3 +370,6 @@ Web-based MongoDB admin interface, written with Node.js and express
 ```
 docker-compose exec mongo-express bash
 ```
+
+## Planned Features
+
