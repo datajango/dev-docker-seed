@@ -1,6 +1,6 @@
 # dev-docker-seed
 
-## A fully cogit statntainerized development seed project
+## A fully containerized development seed project
 
 * nginx 
   * serves plain HTML
@@ -22,7 +22,7 @@
 * mongodb
   * persistant data due to a volume
 * redis manager
-  * using redis commander
+  * using redis-commander
 * mysql database manager
   * using adminer
   * Support for
