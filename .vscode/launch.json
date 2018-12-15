@@ -17,6 +17,17 @@
             //"remoteRoot": "${workspaceFolder}/nodejs/src",
             "remoteRoot": "/home/nodejs/src",
             "protocol": "inspector"
-        }
+        },
+        {
+            "name": "Docker: Attach to NestJS",
+            "type": "node",
+            "request": "attach",
+            "port": 9230,
+            "address": "localhost",
+            "localRoot": "${workspaceFolder}/nest-js-app/src",
+            "remoteRoot": "/nest/dist/src",
+            "protocol": "inspector",
+            "restart": true
+          }
     ]
 }

@@ -347,6 +347,20 @@ Web-based MongoDB admin interface, written with Node.js and express
 docker-compose exec mongo-express bash
 ```
 
+## Nest JS Demo
+
+This project was created from inside the container.
+
+``
+mkdir nest-js-app && cd nest-js-app
+touch Dockerfile .dockerignore
+docker-compose build
+docker-compose up -d
+docker-compose exec nest-js-app bash
+nest new .
+npm install
+```
+
 ## Planned Features
 
 All these features will be add in the the next couple weeks.

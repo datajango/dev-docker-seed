@@ -113,6 +113,17 @@ services:
     links:
       - redis
 
+  nest-js-app:
+    container_name: nest-js-app
+    build: ./nest-js-app
+    ports:
+      - 4400:3000
+      - 9230:9229
+    tty: true
+    restart: always
+    volumes:
+      - ./nest-js-app:/nest
+
 volumes:
   mysql_data:
   mongodb_data:
